@@ -1,0 +1,11 @@
+node_modules/
+dist/
+dist-*/
+artifacts/
+*.tsbuildinfo
+.DS_Store
+.beatdeck-backup/
+*.beatdeck-new
+
+# texto completo de la documentación de Dynatrace (no redistribuir)
+reference/source.md
