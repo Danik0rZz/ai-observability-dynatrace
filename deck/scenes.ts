@@ -69,6 +69,8 @@ export const SCENES: SceneDef[] = [
       { name: 'openllmetry · cloud', ref: APP + ' · Get started', source: 'Open source auto-instrumentation libraries like OpenLLMetry. Directly pulling the data from cloud providers through cloud monitoring.' },
       { name: 'gen_ai.*', ref: MR, note: 'Todos los caminos convergen en atributos gen_ai.*: el idioma que entiende la app.' },
       { name: 'evaluar', ref: GS, source: 'Score production GenAI traces with the open-source dt-evals CLI and visualize quality and drift in Dynatrace.' },
+      { name: 'oneagent vs otel', ref: OA + ' + ' + OT + ' + ' + OI, note: 'OpenInference es el recomendado DENTRO de OTel, no frente a OneAgent. Cada uno cubre cosas distintas.', source: 'For OpenTelemetry-based ingestion, use OpenInference.' },
+      { name: 'juntos', ref: UC + '/end-to-end-observability', source: 'OneAgent complements this by delivering full-stack Kubernetes and application context (infrastructure health, workload/process detection, logs, code-level visibility, vulnerability) and by correlating OTEL traces with services, problems, and Dynatrace Intelligence insights.', note: 'Animación: las dos opciones se unen.' },
     ],
   },
   {

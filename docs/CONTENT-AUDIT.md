@@ -37,6 +37,8 @@ Rule: the source decides **what** is said; the design reference decides **how** 
 
 ## Notas de fidelidad
 
+- 5.8–5.9 (nuevos): comparación OneAgent vs OpenTelemetry con datos de oneagent, opentelemetry y openinference, y unión de ambos según el caso end-to-end-observability ("OneAgent complements this…"). OpenInference es el recomendado *dentro* de OTel, no frente a OneAgent; las etiquetas de 5.x y 7.1 lo dejan explícito.
+
 - Todo el código en pantalla sale de `deck/terminal.ts`, copiado literal de la fuente (verify `--source` lo comprueba).
 - 4.6 (waterfall) es **ilustrativo**: nombres de operación del mapeo OpenInference → `gen_ai.operation.name`; duraciones inventadas a propósito, sin valores.
 - "14 evaluadores" (FAQ); el overview dice "más de 10". Se usa el número concreto.

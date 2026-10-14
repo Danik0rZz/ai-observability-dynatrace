@@ -39,7 +39,7 @@ function OpenInference_() {
 
       {/* 07.1 the standard and the gap */}
       <Text on={is(0)} out={past(0)} y={TOP + 20} size={44} w={1560}>
-        Estándar abierto de observabilidad de IA desarrollado por <A>Arize AI</A>. El camino OpenTelemetry <A>recomendado</A>.
+        Estándar abierto de observabilidad de IA desarrollado por <A>Arize AI</A>. El instrumentor <A>recomendado</A> si ingieres con OpenTelemetry.
       </Text>
       <Reveal on={is(0)} out={past(0)} x={L} y={TOP + 220} delay={200}>
         <div style={{ display: 'flex', alignItems: 'center', gap: 60 }}>

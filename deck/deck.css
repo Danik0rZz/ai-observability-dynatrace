@@ -1,0 +1,20 @@
+/* Deck-only ambient effects. Both are switched off for capture (verify) and reduced motion. */
+
+/* 05.9: a ring that keeps pulsing out of the "+" */
+.dt-pulse {
+  position: absolute; inset: -3px; border-radius: 50%; border: 3px solid var(--accent);
+  animation: dt-pulse 2.2s cubic-bezier(.22,1,.36,1) 1.6s infinite; opacity: 0; pointer-events: none;
+}
+@keyframes dt-pulse { 0% { transform: scale(1); opacity: .7; } 100% { transform: scale(2.4); opacity: 0; } }
+
+/* 05.9: a light sweep across the joined cards */
+.dt-sweep {
+  position: absolute; inset: 0; overflow: hidden; pointer-events: none;
+  background: linear-gradient(105deg, transparent 35%, rgba(91, 140, 255, .18) 50%, transparent 65%);
+  background-size: 250% 100%; background-position: 150% 0;
+  animation: dt-sweep 3.2s ease-in-out 1.2s infinite;
+}
+@keyframes dt-sweep { 0% { background-position: 150% 0; } 60%, 100% { background-position: -50% 0; } }
+
+.capture .dt-pulse, .reduced-motion .dt-pulse,
+.capture .dt-sweep, .reduced-motion .dt-sweep { animation: none; opacity: 0; }

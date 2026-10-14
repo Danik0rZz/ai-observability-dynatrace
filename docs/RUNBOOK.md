@@ -23,7 +23,7 @@
 
 Automatic beats: ninguno. Hay contadores que animan solos al entrar (8.6, 12.1, 14.5) sin necesidad de esperar.
 
-17 escenas · 102 beats. Teclas 1–9 saltan a las escenas 01–09; para el resto usa O (overview).
+17 escenas · 104 beats. Teclas 1–9 saltan a las escenas 01–09; para el resto usa O (overview).
 
 ## If something goes wrong
 

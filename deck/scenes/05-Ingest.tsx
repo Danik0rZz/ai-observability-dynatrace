@@ -1,10 +1,11 @@
 import { Arrow, NodeBox, Reveal, Scene, useScene, type Rect } from 'beatdeck';
 import { A, Head } from '../ui';
+import { Choose } from './05-Choose';
 
 const APP: Rect = { x: 150, y: 560, w: 300, h: 120 };
 const PATHS: { r: Rect; k: string; v: string }[] = [
-  { r: { x: 610, y: 310, w: 560, h: 110 }, k: 'zero-code', v: 'OneAgent' },
-  { r: { x: 610, y: 445, w: 560, h: 110 }, k: 'recomendado · OTel', v: 'OpenInference' },
+  { r: { x: 610, y: 310, w: 560, h: 110 }, k: 'zero-code · full-stack', v: 'OneAgent' },
+  { r: { x: 610, y: 445, w: 560, h: 110 }, k: 'OTel · instrumentor recomendado', v: 'OpenInference' },
   { r: { x: 610, y: 580, w: 560, h: 110 }, k: 'instrumentación directa', v: 'OpenTelemetry SDK' },
   { r: { x: 610, y: 715, w: 560, h: 110 }, k: 'auto-instrumentación OSS', v: 'OpenLLMetry' },
   { r: { x: 610, y: 850, w: 560, h: 110 }, k: 'pull de proveedores', v: 'Cloud monitoring' },
@@ -15,7 +16,8 @@ const EVAL: Rect = { x: 1340, y: 860, w: 430, h: 100 };
 
 function Ingest_() {
   const { here, b } = useScene();
-  const at = (k: number) => here && b >= k;
+  // the diagram builds over 05.1–05.7, then gives the stage to the comparison (05.8–05.9)
+  const at = (k: number) => here && b >= k && b <= 6;
   // path i appears on beat i+1; the last two share beat 4
   const pathOn = (i: number) => at(Math.min(i + 1, 4));
   return (
@@ -43,6 +45,8 @@ function Ingest_() {
       {/* 05.7 evaluate the traffic you already ingest */}
       <Arrow from={EVAL} to={AIO} on={at(6)} label="scores → bizevents" lx={-16} labelAnchor="end" />
       <NodeBox rect={EVAL} on={at(6)} kind="llm-as-a-judge" value="dt-evals" tone="hot" />
+
+      <Choose here={here} b={b} />
 
       <Reveal on={here && b === 0} x={150} y={330}>
         <div style={{ fontSize: 34, width: 400, lineHeight: 1.25, color: 'var(--ink-2)' }}>
